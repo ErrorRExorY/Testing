@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@mantine/hooks": "^7.5.3",
     "clsx": "^2.1.0",
     "million": "^2.6.4",
     "react": "^18.2.0",
