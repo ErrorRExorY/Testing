@@ -61,12 +61,12 @@ jobs:
       - name: Bundle files
         run: |
           ls
-          mkdir -p ./temp/v-staffchat
-          mkdir -p ./temp/v-staffchat/web/
-          cp ./{README.md,fxmanifest.lua,config.lua ./temp/v-staffchat
-          cp -r ./{client,locales,server,shared} ./temp/v-staffchat
-          cp -r ./web/dist ./temp/v-staffchat/web/
-          cd ./temp && zip -r ../v-staffchat.zip ./v-staffchat
+          mkdir -p ./temp/Testing
+          mkdir -p ./temp/Testing/web/
+          cp ./{README.md,fxmanifest.lua,config.lua} ./temp/Testing
+          cp -r ./{client,locales,server,shared} ./temp/Testing
+          cp -r ./web/dist ./temp/Testing/web/
+          cd ./temp && zip -r ../Testing.zip ./Testing
 
       - name: Create Release
         uses: "marvinpinto/action-automatic-releases@v1.2.1"
@@ -75,7 +75,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           title: ${{ env.RELEASE_VERSION }}
           prerelease: false
-          files: v-staffchat.zip
+          files: Testing.zip
 
         env:
           CI: false
